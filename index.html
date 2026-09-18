@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07110e" />
+  <meta name="description" content="ایجنت‌یار؛ دستیار هوش مصنوعی کسب‌وکار برای پاسخ‌گویی، رزرو و نوبت‌دهی، یادآوری و پیگیری مشتری در اینستاگرام، واتساپ و تلگرام." />
+  <title>ایجنت‌یار | همراه هوشمند کسب‌وکار تو</title>
+  <link rel="icon" href="assets/agentyar-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="ایجنت‌یار">
+        <img src="assets/agentyar-logo.png" alt="لوگوی ایجنت‌یار" />
+      </a>
+      <nav class="desktop-nav" aria-label="ناوبری اصلی">
+        <a href="#top">ایجنت‌یار</a>
+        <a href="#business">ایجنت‌یار بیزنس</a>
+        <a href="#services">خدمات</a>
+        <a href="#how">نحوه کار</a>
+        <a href="#customers">مشتریان</a>
+        <a href="blog/">بلاگ</a>
+        <a href="#contact">تماس با ما</a>
+      </nav>
+      <a class="btn btn-red header-cta" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85." target="_blank" rel="noopener">درخواست دمو</a>
+      <button class="menu-button" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" hidden>
+      <a href="#top">ایجنت‌یار</a>
+      <a href="#business">ایجنت‌یار بیزنس</a>
+      <a href="#services">خدمات</a>
+      <a href="#how">نحوه کار</a>
+      <a href="#customers">مشتریان</a>
+      <a href="blog/">بلاگ</a>
+      <a href="#contact">تماس با ما</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="top" class="hero-section">
+      <div class="container">
+        <div class="hero-carousel" aria-roledescription="carousel">
+          <button class="carousel-arrow prev" aria-label="اسلاید قبلی">‹</button>
+          <button class="carousel-arrow next" aria-label="اسلاید بعدی">›</button>
+
+          <div class="hero-layout">
+            <div class="hero-copy">
+              <div class="eyebrow"><span>✦</span><span id="hero-eyebrow"></span></div>
+              <h1 id="hero-title"></h1>
+              <p id="hero-text" class="hero-lead"></p>
+              <div class="hero-actions">
+                <a class="btn btn-red" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85." target="_blank" rel="noopener">مشاوره و دموی رایگان</a>
+                <a class="btn btn-outline" href="#services">مشاهده خدمات</a>
+              </div>
+              <div class="hero-trust">
+                <strong>20+</strong>
+                <div><b>کسب‌وکار فعال</b><span>تا امروز از خدمات ایجنت‌یار استفاده کرده‌اند.</span></div>
+              </div>
+            </div>
+
+            <div class="hero-visual" aria-label="نمونه تعامل دستیار هوش مصنوعی">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="channel-row">
+                <div class="channel-card">
+                  <span class="channel-icon">◎</span>
+                  <div><b>Instagram</b><small>پاسخ‌گویی هوشمند</small></div>
+                </div>
+                <div class="channel-card">
+                  <span class="channel-icon">◉</span>
+                  <div><b>WhatsApp</b><small>رزرو و پیگیری</small></div>
+                </div>
+              </div>
+              <div class="phone-mockup">
+                <div class="phone-head">
+                  <div class="phone-brand">
+                    <img src="assets/agentyar-logo.png" alt="" />
+                    <div><b>ایجنت‌یار</b><small>آنلاین</small></div>
+                  </div>
+                  <span class="bot-dot">●</span>
+                </div>
+                <div class="chat" id="chat-box"></div>
+                <div class="bot-status"><span></span><span id="bot-status-text"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-band">
+      <div class="container stats-grid">
+        <div><strong>20+</strong><span>کسب‌وکار فعال</span></div>
+        <div><strong>3 بستر ارتباطی</strong><span>اینستاگرام، واتساپ و تلگرام</span></div>
+        <div><strong>4 دستیار هوش مصنوعی</strong><span>برای فرایندهای کلیدی</span></div>
+        <div><strong>24/7</strong><span>پاسخ‌گویی خودکار</span></div>
+      </div>
+    </section>
+
+    <section id="business" class="section">
+      <div class="container">
+        <div id="services" class="anchor-offset"></div>
+        <div class="section-head">
+          <span>ایجنت‌یار بیزنس</span>
+          <h2>چه کارهایی را برای کسب‌وکار شما خودکار می‌کنیم؟</h2>
+          <p>چهار دستیار هوش مصنوعی برای حذف گلوگاه‌های واقعی از مسیر پاسخ‌گویی، رزرو و پیگیری مشتری.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><div class="number">01</div><div class="service-icon">◫</div><h3>رزرو و نوبت‌دهی</h3><p>ثبت درخواست، پیشنهاد زمان‌های آزاد و نهایی‌کردن نوبت داخل اینستاگرام، واتساپ و تلگرام.</p><div class="pills"><span>Instagram</span><span>WhatsApp</span><span>Telegram</span></div></article>
+          <article class="service-card"><div class="number">02</div><div class="service-icon">↻</div><h3>پیگیری مشتریان بدون پاسخ</h3><p>پیگیری خودکار مشتری‌هایی که گفتگو را نیمه‌کاره رها کرده‌اند تا فرصت فروش فراموش نشود.</p><div class="pills"><span>Instagram</span><span>WhatsApp</span></div></article>
+          <article class="service-card"><div class="number">03</div><div class="service-icon">◷</div><h3>یادآوری نوبت مشتری</h3><p>ارسال یادآوری زمان نوبت برای کاهش فراموشی، لغو دیرهنگام و عدم مراجعه.</p><div class="pills"><span>Instagram</span><span>WhatsApp</span></div></article>
+          <article class="service-card"><div class="number">04</div><div class="service-icon">✦</div><h3>پاسخ‌گوی هوشمند</h3><p>پاسخ سریع و یکدست به سوالات پرتکرار مشتریان در دایرکت و واتساپ، حتی خارج از ساعت کاری.</p><div class="pills"><span>Instagram</span><span>WhatsApp</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section alt-section">
+      <div class="container">
+        <div class="section-head">
+          <span>راه‌اندازی ساده</span>
+          <h2>دستیارهای هوش مصنوعی چطور وارد کسب‌وکار شما می‌شوند؟</h2>
+        </div>
+        <div class="steps-grid">
+          <article><div class="step-index">1</div><h3>شناخت فرایند شما</h3><p>سوال‌ها، خدمات، ساعت کاری، قواعد رزرو و سناریوهای پیگیری را با شما مشخص می‌کنیم.</p></article>
+          <article><div class="step-index">2</div><h3>تنظیم دستیارهای هوش مصنوعی</h3><p>رفتار هر دستیار را براساس لحن برند و نیاز کسب‌وکار شما تنظیم و تست می‌کنیم.</p></article>
+          <article><div class="step-index">3</div><h3>اتصال و شروع کار</h3><p>دستیارها روی کانال‌های شما فعال می‌شوند و فرایند پاسخ، رزرو و پیگیری را اجرا می‌کنند.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="customers" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span>اعتماد مشتری‌ها</span>
+          <h2>تجربه کسب‌وکارهایی که با ایجنت‌یار کار کرده‌اند</h2>
+          <p class="testimonial-note">بازخوردها برای خوانایی بهتر کوتاه و ویرایش شده‌اند و مفهوم اصلی تجربه مشتریان حفظ شده است.</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial"><div class="avatar">ن</div><p>«ایجنت‌یار کمک کرده پیگیری مشتری‌ها و هماهنگی نوبت‌ها منظم‌تر انجام شود و بخشی از کارهای تکراری از دوش تیم برداشته شود.»</p><b>نگار سکوتی</b><span>سالن‌دار</span></article>
+          <article class="testimonial"><div class="avatar">آ</div><p>«پاسخ‌گویی سریع‌تر به دایرکت و پیگیری مشتری‌هایی که جواب نداده بودند، برای تیم ما تجربه کاربردی‌تری ساخته است.»</p><b>آناهیتا حسینی</b><span>مدیر آرایشگاه گیلدا</span></article>
+          <article class="testimonial"><div class="avatar">ش</div><p>«برای ما مهم بود مشتری بدون معطلی پاسخ بگیرد و زمان نوبتش هم یادآوری شود؛ ایجنت‌یار این فرایند را ساده‌تر کرده است.»</p><b>شایلی مجیدی</b><span>مدیر آرایشگاه ماهک</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blog-preview">
+      <div class="container">
+        <div class="section-head-row">
+          <div class="section-head"><span>بلاگ ایجنت‌یار</span><h2>محتوای کاربردی برای اتوماسیون فروش و پشتیبانی</h2></div>
+          <a class="all-posts" href="blog/">مشاهده همه مطالب</a>
+        </div>
+        <div class="blog-grid">
+          <a class="blog-card" href="blog/#whatsapp-appointment-reminders"><div class="blog-visual"><span>واتساپ</span><b>WA</b></div><div class="blog-body"><h3>واتساپ بیزینس برای یادآوری نوبت چه امکاناتی دارد؟</h3><p>مروری بر کاربرد پیام‌های یادآوری و ارتباط خدماتی در WhatsApp Business Platform.</p><span>مطالعه مطلب</span></div></a>
+          <a class="blog-card" href="blog/#instagram-dm-sales"><div class="blog-visual"><span>اینستاگرام</span><b>IG</b></div><div class="blog-body"><h3>چطور دایرکت اینستاگرام را به کانال فروش تبدیل کنیم؟</h3><p>از پاسخ‌گویی سریع تا هدایت گفتگو به رزرو و پیگیری لید.</p><span>مطالعه مطلب</span></div></a>
+          <a class="blog-card" href="blog/#missed-customer-followup"><div class="blog-visual"><span>فروش</span><b>↻</b></div><div class="blog-body"><h3>چرا پیگیری مشتریان بدون پاسخ مهم است؟</h3><p>چارچوب ساده برای شناسایی گفتگوهای نیمه‌کاره و برگرداندن مشتری به مسیر خرید.</p><span>مطالعه مطلب</span></div></a>
+          <a class="blog-card" href="blog/#ai-customer-support"><div class="blog-visual"><span>هوش مصنوعی</span><b>AI</b></div><div class="blog-body"><h3>پاسخ‌گوی هوشمند برای چه سوال‌هایی مناسب است؟</h3><p>تفکیک سوال‌های پرتکرار از مواردی که باید به اپراتور انسانی ارجاع شوند.</p><span>مطالعه مطلب</span></div></a>
+          <a class="blog-card" href="blog/#booking-automation"><div class="blog-visual"><span>اتوماسیون</span><b>◫</b></div><div class="blog-body"><h3>اتوماسیون رزرو برای چه کسب‌وکارهایی کاربردی‌تر است؟</h3><p>برای سالن‌ها، کلینیک‌ها و کسب‌وکارهایی که فروششان با نوبت جلو می‌رود.</p><span>مطالعه مطلب</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+      <div class="container">
+        <div class="cta-box"><div><span>یک قدم تا کسب‌وکار هوشمندتر</span><h2>آماده‌ای پاسخ‌گویی و پیگیری مشتری را هوشمندتر کنی؟</h2><p>برای دیدن دمو و بررسی سناریوی مناسب کسب‌وکارت همین حالا پیام بده.</p></div><a class="btn btn-red" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85." target="_blank" rel="noopener">درخواست مشاوره و دمو</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><h3>ایجنت‌یار</h3><p>همراه هوشمند کسب‌وکار تو؛ برای پاسخ، رزرو، یادآوری و پیگیری در اینستاگرام، واتساپ و تلگرام.</p></div>
+      <div><b>دسترسی سریع</b><a href="#business">ایجنت‌یار بیزنس</a><a href="#services">خدمات</a><a href="#customers">مشتریان</a><a href="blog/">بلاگ</a></div>
+      <div><b>ارتباط با ما</b><a href="tel:+989350886064">09350886064</a><a href="https://instagram.com/Agentyar_com" target="_blank" rel="noopener">Agentyar_com</a><a href="https://agentyar.com">agentyar.com</a></div>
+    </div>
+    <div class="copyright">© 2026 ایجنت‌یار — تمامی حقوق محفوظ است.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
