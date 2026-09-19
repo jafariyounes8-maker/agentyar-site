@@ -74,15 +74,17 @@ git push -u origin main
 
 ## ۳) چک‌لیست چیزهایی که **باید** قبل از انتشار عوض کنید
 
-| مورد | کجا | مقدار فعلی (جایگزین شود) |
+| مورد | کجا | وضعیت |
 |---|---|---|
-| دامنه | همه‌ی فایل‌های HTML + `robots.txt` + `sitemap.xml` | `agentyar.com` |
-| شماره واتساپ | `assets/js/main.js` → `CONFIG.whatsapp` | `989000000000` |
-| شماره تلفن | `index.html` (بخش تماس) | `۰۲۱-۱۲۳۴۵۶۷۸` / `tel:+982112345678` |
-| ایمیل | `index.html`, `main.js` | `hello@agentyar.com` |
-| اینستاگرام | همه‌ی صفحات (فوتر + بخش تماس) | `instagram.com/agentyar` |
-| لینکدین / تلگرام / یوتیوب | فوتر همه‌ی صفحات | `href="#"` |
+| شماره واتساپ | `main.js` → `CONFIG.whatsapp` | ✅ `989350886064` |
+| ایمیل | `index.html`, `main.js`, فوتر همه‌ی صفحات | ✅ `Jafariyounes8@gmail.com` |
+| شماره تلفن کارت «تماس تلفنی» | `index.html` بخش تماس | ✅ همان موبایل — اگر تماس تلفنی نمی‌خواهی، کل آن کارت را پاک کن |
+| دامنه | همه‌ی HTMLها + `robots.txt` + `sitemap.xml` + `CNAME` | ✅ `agentyar.com` |
+| اینستاگرام | همه‌ی صفحات (فوتر + بخش تماس) | ✅ `@Agentyar_com` |
+| لینکدین / تلگرام / یوتیوب | فوتر همه‌ی صفحات | ⬜ هنوز `href="#"` است — اگر نداری، آیکون‌ها را پاک کن |
 | اعداد آمار | `index.html` و `business.html` | ⚠️ پایین را بخوانید |
+
+> فایل `CNAME` با محتوای `agentyar.com` آماده در ریشه هست. فقط رکوردهای DNS بخش ۲ را بزن.
 
 جایگزینی سریع دامنه در همه‌ی فایل‌ها:
 
@@ -106,13 +108,13 @@ grep -rl "agentyar.com" . | xargs sed -i 's/agentyar\.com/YOURDOMAIN.com/g'
 
 ## ۴) فرم‌ها چطور کار می‌کنند
 
-بالای `assets/js/main.js` یک بلاک تنظیمات هست:
+بالای `main.js` یک بلاک تنظیمات هست:
 
 ```js
 var CONFIG = {
-  whatsapp: '989000000000',   // شماره واتساپ، با کد کشور، بدون + و بدون صفر
-  formEndpoint: '',           // خالی = انتقال به واتساپ
-  email: 'hello@agentyar.com'
+  whatsapp: '989350886064',            // شماره واتساپ، با کد کشور، بدون + و بدون صفر
+  formEndpoint: '',                    // خالی = انتقال به واتساپ
+  email: 'Jafariyounes8@gmail.com'
 };
 ```
 
@@ -135,7 +137,7 @@ var CONFIG = {
 ```html
 <a class="post" href="article-ai-tools.html" data-category="ai" data-tags="کلمات کلیدی برای جست‌وجو">
   <div class="post__media">
-    <img src="assets/img/cover-1.svg" alt="" loading="lazy" width="800" height="500">
+    <img src="cover-1.svg" alt="" loading="lazy" width="800" height="500">
     <span class="post__badge">راهنما</span>
   </div>
   <div class="post__body">
@@ -148,7 +150,7 @@ var CONFIG = {
 `data-category` باید یکی از این‌ها باشد: `ai` · `product` · `success` · `business`
 (اگر دسته‌ی جدیدی خواستید، یک `chip-btn` با `data-filter` متناظر در `blog.html` اضافه کنید.)
 
-تصاویر کاور فعلی، گرافیک‌های SVG ساخته‌شده هستند. هر وقت عکس واقعی داشتید، در `assets/img/` بگذارید و `src` را عوض کنید (نسبت ۱۶:۱۰، حداقل ۸۰۰×۵۰۰).
+تصاویر کاور فعلی، گرافیک‌های SVG ساخته‌شده هستند. هر وقت عکس واقعی داشتید، در `` بگذارید و `src` را عوض کنید (نسبت ۱۶:۱۰، حداقل ۸۰۰×۵۰۰).
 
 ---
 
@@ -156,9 +158,9 @@ var CONFIG = {
 
 الان وزیرمتن از Google Fonts لود می‌شود (در `<head>` هر صفحه). اگر خواستید کاملاً مستقل از اینترنت بیرونی باشد:
 
-1. فایل‌های `woff2` وزیرمتن را از [اینجا](https://github.com/rastikerdar/vazirmatn/releases) دانلود کنید و در `assets/fonts/` بگذارید.
+1. فایل‌های `woff2` وزیرمتن را از [اینجا](https://github.com/rastikerdar/vazirmatn/releases) دانلود کنید و در کنار بقیه فایل‌ها بگذارید.
 2. تگ‌های `fonts.googleapis.com` و `fonts.gstatic.com` را از `<head>` همه‌ی صفحات حذف کنید.
-3. در بالای `assets/css/style.css` بلاک `@font-face` را از حالت کامنت خارج کنید.
+3. در بالای `style.css` بلاک `@font-face` را از حالت کامنت خارج کنید.
 
 مزیت: سرعت بالاتر برای کاربر ایرانی و بی‌نیازی از سرویس بیرونی.
 
