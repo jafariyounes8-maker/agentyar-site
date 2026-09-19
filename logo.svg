@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="Agentyar">
+  <defs>
+    <linearGradient id="ay-a" x1="6" y1="44" x2="42" y2="4" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c7a3a"/>
+      <stop offset=".45" stop-color="#16b757"/>
+      <stop offset="1" stop-color="#21e06b"/>
+    </linearGradient>
+    <linearGradient id="ay-b" x1="10" y1="42" x2="26" y2="6" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#21e06b"/>
+      <stop offset="1" stop-color="#9dffc4"/>
+    </linearGradient>
+  </defs>
+  <!-- بدنه اصلی حرف A -->
+  <path d="M24.6 3.8 45 44.2h-8.9L24.1 18.9 12.2 44.2H3.4L23.7 3.8h.9Z" fill="url(#ay-a)"/>
+  <!-- استروک روشن لبه‌ی چپ -->
+  <path d="M21.6 6.4 8.2 34.1l-3.9-.1L18.1 6.4h3.5Z" fill="url(#ay-b)" opacity=".95"/>
+  <!-- میله‌ی افقی -->
+  <rect x="16.2" y="29.4" width="15.6" height="5.4" rx="2.7" fill="#04170c"/>
+  <rect x="16.2" y="29.4" width="15.6" height="5.4" rx="2.7" fill="url(#ay-a)" opacity=".85"/>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="w1" x1="120" y1="520" x2="820" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c7a3a" stop-opacity="0"/>
+      <stop offset=".45" stop-color="#16b757" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#4dff92" stop-opacity=".2"/>
+    </linearGradient>
+    <linearGradient id="w2" x1="60" y1="560" x2="700" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#21e06b" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#0c7a3a" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <g filter="url(#soft)">
+    <path d="M-40 520C140 470 250 380 330 250 410 120 560 40 900 20v560H-40Z" fill="url(#w1)" opacity=".55"/>
+    <path d="M-60 560C120 530 230 450 300 330 375 205 520 130 780 110v450H-60Z" fill="url(#w2)" opacity=".6"/>
+  </g>
+  <path d="M-40 540C150 500 270 410 350 280 430 150 580 70 900 48" stroke="#4dff92" stroke-opacity=".35" stroke-width="2" fill="none"/>
+  <path d="M-40 500C130 455 245 365 320 240 400 110 545 30 900 8" stroke="#21e06b" stroke-opacity=".18" stroke-width="1.5" fill="none"/>
+</svg>

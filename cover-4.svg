@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08120c"/><stop offset="1" stop-color="#040a07"/>
+    </linearGradient>
+    <radialGradient id="gl4" cx="0" cy="0" r="1" gradientTransform="translate(400 250) scale(340)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#21e06b" stop-opacity=".55"/><stop offset="1" stop-color="#21e06b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="st4" x1="0" y1="500" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c7a3a"/><stop offset=".5" stop-color="#21e06b"/><stop offset="1" stop-color="#9dffc4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg4)"/>
+  <rect width="800" height="500" fill="url(#gl4)"/>
+  <path d="M0 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M50 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M100 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M150 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M200 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M250 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M300 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M350 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M400 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M450 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M500 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M550 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M600 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M650 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M700 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M750 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M800 0V500" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M0 0H800" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M0 50H800" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M0 100H800" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M0 150H800" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M0 200H800" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M0 250H800" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M0 300H800" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M0 350H800" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M0 400H800" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M0 450H800" stroke="#5ed691" stroke-opacity=".05"/>
+  <path d="M0 500H800" stroke="#5ed691" stroke-opacity=".05"/>
+  <circle cx="400" cy="250" r="60" stroke="#21e06b" stroke-opacity="0.34" stroke-width="1.6"/>
+  <circle cx="400" cy="250" r="112" stroke="#21e06b" stroke-opacity="0.29" stroke-width="1.6"/>
+  <circle cx="400" cy="250" r="164" stroke="#21e06b" stroke-opacity="0.24" stroke-width="1.6"/>
+  <circle cx="400" cy="250" r="216" stroke="#21e06b" stroke-opacity="0.19" stroke-width="1.6"/>
+  <circle cx="400" cy="250" r="268" stroke="#21e06b" stroke-opacity="0.14" stroke-width="1.6"/>
+  <circle cx="400" cy="250" r="320" stroke="#21e06b" stroke-opacity="0.09" stroke-width="1.6"/>
+  <path d="M400 150 470 350h-34l-36-96-36 96h-34z" fill="url(#st4)"/>
+  <rect x="368" y="286" width="64" height="20" rx="10" fill="#040a07" opacity=".85"/>
+  <rect x=".5" y=".5" width="799" height="499" stroke="#5ed691" stroke-opacity=".12"/>
+</svg>
