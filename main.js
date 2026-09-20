@@ -316,11 +316,13 @@
      8) شماره واتساپ و ایمیل را در کل صفحه هماهنگ کن
      ---------------------------------------------------------------------- */
   (function syncLinks() {
-    if (CONFIG.whatsapp) {
-      $$('a[href*="wa.me"]').forEach(function (a) {
-        a.setAttribute('href', 'https://wa.me/' + CONFIG.whatsapp);
-      });
-    }
+    if (!CONFIG.whatsapp) return;
+    $$('a[href*="wa.me"]').forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+      var query = href.indexOf('?') !== -1 ? href.slice(href.indexOf('?')) : '';
+      // فقط شماره عوض می‌شود؛ متن آماده‌ی پیام دست‌نخورده می‌ماند
+      a.setAttribute('href', 'https://wa.me/' + CONFIG.whatsapp + query);
+    });
   })();
 
 })();

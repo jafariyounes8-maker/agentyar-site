@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>وبلاگ ایجنت‌یار | مقالات و آموزش‌های هوش مصنوعی</title>
-<meta name="description" content="مقالات، آموزش‌ها و جدیدترین اخبار دنیای هوش مصنوعی و دستیارهای هوشمند — وبلاگ ایجنت‌یار.">
+<title>بلاگ ایجنت‌یار | راهنمای رشد سالن و آرایشگاه</title>
+<meta name="description" content="راهنماها و تجربه‌های واقعی برای سالن‌ها و آرایشگاه‌ها و دستیارهای هوشمند — وبلاگ ایجنت‌یار.">
 <meta name="theme-color" content="#050806">
 <link rel="canonical" href="https://agentyar.com/blog.html">
 
@@ -12,18 +12,20 @@
 <meta property="og:locale" content="fa_IR">
 <meta property="og:site_name" content="Agentyar">
 <meta property="og:title" content="وبلاگ ایجنت‌یار">
-<meta property="og:description" content="مقالات، آموزش‌ها و جدیدترین اخبار دنیای هوش مصنوعی.">
+<meta property="og:description" content="راهنماها و تجربه‌های واقعی برای سالن‌ها و آرایشگاه‌ها.">
 <meta property="og:url" content="https://agentyar.com/blog.html">
 <meta property="og:image" content="https://agentyar.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 
+<!-- فونت یکان بخ -->
+<link rel="preconnect" href="https://v1.fontapi.ir">
+<link href="https://v1.fontapi.ir/css/YekanBakh" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add('js');</script>
@@ -34,19 +36,19 @@
 <header class="site-header" id="siteHeader">
   <div class="container site-header__inner">
     <a class="logo" href="index.html" aria-label="ایجنت‌یار — صفحه اصلی">
-      <img class="logo__mark" src="logo.svg" alt="" width="38" height="38">
-      <span class="logo__text">Agentyar</span>
+      <img class="logo__img" src="logo.png" alt="ایجنت‌یار" width="120" height="34">
     </a>
 
     <nav class="nav" aria-label="ناوبری اصلی">
-      <a href="index.html#services">محصولات</a>
-      <a href="business.html">راهکارها</a>
-      <a href="blog.html">منابع</a>
-      <a href="index.html#about">درباره ما</a>
+      <a href="index.html#how">چطور کار می‌کند</a>
+      <a href="index.html#agents">ایجنت‌ها</a>
+      <a href="index.html#pricing">قیمت</a>
+      <a href="blog.html">بلاگ</a>
+      <a href="business.html">بیزنس</a>
     </nav>
 
     <div class="header__actions">
-      <a class="btn btn--primary btn--sm" href="index.html#consult">درخواست مشاوره</a>
+      <a class="btn btn--primary btn--sm" href="https://wa.me/989350886064">رایگان امتحان کن</a>
       <button class="burger" id="burger" aria-label="باز کردن منو" aria-expanded="false" aria-controls="drawer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -60,7 +62,7 @@
 
       <div class="section-head">
         <h1 class="h-display">وبلاگ <span class="grad-text">ایجنت‌یار</span></h1>
-        <p class="lead">مقالات، آموزش‌ها و جدیدترین اخبار دنیای هوش مصنوعی</p>
+        <p class="lead">راهنماها و تجربه‌های واقعی برای سالن‌ها و آرایشگاه‌ها</p>
       </div>
 
       <!-- نوار ابزار -->
@@ -73,72 +75,72 @@
 
         <div class="chips" id="postChips" role="group" aria-label="فیلتر دسته‌بندی">
           <button class="chip-btn is-active" data-filter="all" aria-pressed="true">همه</button>
+          <button class="chip-btn" data-filter="booking" aria-pressed="false">نوبت‌دهی</button>
+          <button class="chip-btn" data-filter="growth" aria-pressed="false">جذب مشتری</button>
           <button class="chip-btn" data-filter="ai" aria-pressed="false">هوش مصنوعی</button>
-          <button class="chip-btn" data-filter="product" aria-pressed="false">محصولات</button>
-          <button class="chip-btn" data-filter="success" aria-pressed="false">موفقیت</button>
-          <button class="chip-btn" data-filter="business" aria-pressed="false">کسب‌وکار</button>
+          <button class="chip-btn" data-filter="case" aria-pressed="false">مطالعه موردی</button>
         </div>
       </div>
 
       <!-- لیست مقالات -->
       <div class="grid grid--3" id="postList">
 
-        <a class="post" href="article.html" data-category="ai" data-tags="هوش مصنوعی زندگی روزمره دستیار">
+        <a class="post" href="article.html" data-category="booking" data-tags="دایرکت پاسخ سرعت مشتری اینستاگرام">
           <div class="post__media">
             <img src="cover-1.svg" alt="" loading="lazy" width="800" height="500">
             <span class="post__badge">راهنما</span>
           </div>
           <div class="post__body">
-            <h3>چطور از هوش مصنوعی در زندگی روزمره استفاده کنیم؟</h3>
+            <h3>چرا نصف پیام‌های دایرکت سالن‌ها بی‌جواب می‌ماند</h3>
             <div class="post__meta"><span>۱۶ شهریور ۱۴۰۳</span><span>۵ دقیقه مطالعه</span></div>
           </div>
         </a>
 
-        <a class="post" href="article.html" data-category="success" data-tags="بهره‌وری ایجنت زمان">
+        <a class="post" href="article.html" data-category="booking" data-tags="نوبت از دست رفته صندلی خالی هزینه">
           <div class="post__media">
             <img src="cover-2.svg" alt="" loading="lazy" width="800" height="500">
             <span class="post__badge">مقاله</span>
           </div>
           <div class="post__body">
-            <h3>۵ راه برای افزایش بهره‌وری با ایجنت‌ها</h3>
+            <h3>نوبت‌های از دست رفته چقدر برای سالن شما هزینه دارد؟</h3>
             <div class="post__meta"><span>۸ شهریور ۱۴۰۳</span><span>۷ دقیقه مطالعه</span></div>
           </div>
         </a>
 
-        <a class="post" href="article.html" data-category="product" data-tags="آینده دستیار هوشمند ایران محصول">
+        <a class="post" href="article.html" data-category="booking" data-tags="یادآوری نوبت پیامک درآمد">
           <div class="post__media">
             <img src="cover-3.svg" alt="" loading="lazy" width="800" height="500">
-            <span class="post__badge">محصول</span>
-          </div>
-          <div class="post__body">
-            <h3>آینده دستیارهای هوشمند در ایران</h3>
-            <div class="post__meta"><span>۳ شهریور ۱۴۰۳</span><span>۶ دقیقه مطالعه</span></div>
-          </div>
-        </a>
-
-        <a class="post" href="article.html" data-category="business" data-tags="کسب‌وکار کوچک اتوماسیون دایرکت اینستاگرام">
-          <div class="post__media">
-            <img src="cover-4.svg" alt="" loading="lazy" width="800" height="500">
-            <span class="post__badge">کسب‌وکار</span>
-          </div>
-          <div class="post__body">
-            <h3>کسب‌وکار کوچک از کجا باید اتوماسیون را شروع کند؟</h3>
-            <div class="post__meta"><span>۲۸ مرداد ۱۴۰۳</span><span>۸ دقیقه مطالعه</span></div>
-          </div>
-        </a>
-
-        <a class="post" href="article.html" data-category="ai" data-tags="پرامپت نویسی آموزش هوش مصنوعی">
-          <div class="post__media">
-            <img src="cover-2.svg" alt="" loading="lazy" width="800" height="500">
             <span class="post__badge">راهنما</span>
           </div>
           <div class="post__body">
-            <h3>پرامپت‌نویسی برای آدم‌های غیرفنی: از صفر تا کاربردی</h3>
-            <div class="post__meta"><span>۲۰ مرداد ۱۴۰۳</span><span>۹ دقیقه مطالعه</span></div>
+            <h3>یادآوری نوبت: ساده‌ترین کاری که درآمد سالن را بالا می‌برد</h3>
+            <div class="post__meta"><span>۳ شهریور ۱۴۰۳</span><span>۴ دقیقه مطالعه</span></div>
           </div>
         </a>
 
-        <a class="post" href="article.html" data-category="success" data-tags="مطالعه موردی نوبت دهی سالن مشتری">
+        <a class="post" href="article.html" data-category="growth" data-tags="بازگرداندن مشتری قدیمی وفاداری">
+          <div class="post__media">
+            <img src="cover-4.svg" alt="" loading="lazy" width="800" height="500">
+            <span class="post__badge">جذب مشتری</span>
+          </div>
+          <div class="post__body">
+            <h3>مشتری‌ای که سه ماه نیامده را چطور برگردانیم؟</h3>
+            <div class="post__meta"><span>۲۸ مرداد ۱۴۰۳</span><span>۶ دقیقه مطالعه</span></div>
+          </div>
+        </a>
+
+        <a class="post" href="article.html" data-category="ai" data-tags="هوش مصنوعی کسب‌وکار کوچک شروع">
+          <div class="post__media">
+            <img src="cover-2.svg" alt="" loading="lazy" width="800" height="500">
+            <span class="post__badge">هوش مصنوعی</span>
+          </div>
+          <div class="post__body">
+            <h3>هوش مصنوعی برای کسب‌وکار کوچک: از کجا شروع کنیم</h3>
+            <div class="post__meta"><span>۲۰ مرداد ۱۴۰۳</span><span>۸ دقیقه مطالعه</span></div>
+          </div>
+        </a>
+
+        <a class="post" href="article.html" data-category="case" data-tags="مطالعه موردی سالن زیبایی نوبت">
           <div class="post__media">
             <img src="cover-1.svg" alt="" loading="lazy" width="800" height="500">
             <span class="post__badge">مطالعه موردی</span>
@@ -164,10 +166,9 @@
     <div class="footer__grid">
       <div class="footer__about">
         <a class="logo" href="index.html">
-          <img class="logo__mark" src="logo.svg" alt="" width="34" height="34">
-          <span class="logo__text">Agentyar</span>
+          <img class="logo__img" src="logo.png" alt="ایجنت‌یار" width="120" height="34">
         </a>
-        <p>ایجنت‌یار، دستیار هوشمند شما برای زندگی ساده‌تر و هوشمندتر.</p>
+        <p>دستیار هوش مصنوعی سالن‌ها و آرایشگاه‌ها: جواب دادن، نوبت گرفتن، یادآوری کردن.</p>
         <div class="socials">
           <a href="https://instagram.com/agentyar_com" target="_blank" rel="noopener" aria-label="اینستاگرام">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
@@ -185,30 +186,30 @@
       </div>
 
       <div>
-        <h4>محصولات</h4>
+        <h4>محصول</h4>
         <nav class="footer__links">
-          <a href="index.html#services">دستیار شخصی</a>
-          <a href="index.html#services">پرداخت و مالی</a>
-          <a href="index.html#services">رزرو و سفر</a>
-          <a href="business.html">راهکارهای سازمانی</a>
+          <a href="index.html#how">چطور کار می‌کند</a>
+          <a href="index.html#agents">ایجنت‌ها</a>
+          <a href="index.html#pricing">قیمت</a>
+          <a href="business.html">ایجنت‌یار بیزنس</a>
         </nav>
       </div>
 
       <div>
-        <h4>منابع</h4>
+        <h4>بلاگ</h4>
         <nav class="footer__links">
-          <a href="blog.html">وبلاگ</a>
-          <a href="blog.html">راهنما</a>
+          <a href="blog.html">همه‌ی مقالات</a>
+          <a href="blog.html">راهنمای شروع</a>
           <a href="index.html#faq">سوالات متداول</a>
         </nav>
       </div>
 
       <div>
-        <h4>درباره ما</h4>
+        <h4>ارتباط</h4>
         <nav class="footer__links">
-          <a href="index.html#about">داستان ما</a>
-          <a href="mailto:Jafariyounes8@gmail.com">فرصت‌های شغلی</a>
-          <a href="index.html#contact">تماس با ما</a>
+          <a href="https://wa.me/989350886064">واتساپ</a>
+          <a href="https://instagram.com/agentyar_com" target="_blank" rel="noopener">اینستاگرام</a>
+          <a href="mailto:Jafariyounes8@gmail.com">ایمیل</a>
         </nav>
       </div>
     </div>
@@ -224,20 +225,20 @@
   <div class="drawer__panel">
     <div class="drawer__top">
       <span class="logo">
-        <img class="logo__mark" src="logo.svg" alt="" width="32" height="32">
-        <span class="logo__text">Agentyar</span>
+        <img class="logo__img" src="logo.png" alt="ایجنت‌یار" width="120" height="34">
       </span>
       <button class="drawer__close" id="drawerClose" aria-label="بستن منو">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
     </div>
     <nav>
-      <a href="index.html#services">محصولات</a>
-      <a href="business.html">راهکارها</a>
-      <a href="blog.html">منابع</a>
-      <a href="index.html#about">درباره ما</a>
+      <a href="index.html#how">چطور کار می‌کند</a>
+      <a href="index.html#agents">ایجنت‌ها</a>
+      <a href="index.html#pricing">قیمت</a>
+      <a href="blog.html">بلاگ</a>
+      <a href="business.html">ایجنت‌یار بیزنس</a>
     </nav>
-    <a class="btn btn--primary btn--block" href="index.html#consult">درخواست مشاوره</a>
+    <a class="btn btn--primary btn--block" href="https://wa.me/989350886064">رایگان امتحان کن</a>
   </div>
 </div>
 

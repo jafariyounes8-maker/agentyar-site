@@ -1,7 +1,7 @@
 {
   "name": "ایجنت‌یار",
   "short_name": "Agentyar",
-  "description": "دستیار هوشمند برای زندگی واقعی",
+  "description": "دستیار هوش مصنوعی سالن و آرایشگاه",
   "lang": "fa",
   "dir": "rtl",
   "start_url": "./",
@@ -18,11 +18,6 @@
       "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
-    },
-    {
-      "src": "favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
     }
   ]
 }
