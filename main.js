@@ -405,4 +405,40 @@
     });
   })();
 
+
+  /* ----------------------------------------------------------------------
+     13) پنل «چرا شش‌ماهه» روی کارت پلن
+     روی دسکتاپ با هاور باز می‌شود (CSS). روی موبایل با همین دکمه.
+     ---------------------------------------------------------------------- */
+  (function why6() {
+    var card  = $('#planBest');
+    var btn   = $('#why6Btn');
+    var close = $('#why6Close');
+    if (!card || !btn) return;
+
+    var open = function (state) {
+      card.classList.toggle('is-open', state);
+      btn.setAttribute('aria-expanded', state ? 'true' : 'false');
+    };
+
+    btn.addEventListener('click', function () {
+      open(!card.classList.contains('is-open'));
+    });
+
+    if (close) {
+      close.addEventListener('click', function () {
+        open(false);
+        btn.focus();
+      });
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && card.classList.contains('is-open')) open(false);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (card.classList.contains('is-open') && !card.contains(e.target)) open(false);
+    });
+  })();
+
 })();
