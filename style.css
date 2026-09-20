@@ -1390,3 +1390,330 @@ h3, .h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); }
   .logo__img { height: 30px; }
   .logo__img--biz { height: 36px; }
 }
+
+/* ==========================================================================
+   12) نسخه ۳ — مقایسه، امنیت، قیمت، نظرات، تعریف، داینامیک
+   ========================================================================== */
+
+/* ---- ریتم عمودی بازتر ---- */
+:root { --section-y: clamp(70px, 9vw, 130px); }
+.section-head { margin-block-end: clamp(42px, 6vw, 68px); }
+.section-head h2 { margin-block-end: 14px; }
+.section-head .lead { max-width: 58ch; margin-inline: auto; }
+.card h3, .pain h3 { margin-block-end: 12px; }
+.card p, .pain p { line-height: 2.05; }
+.grid { gap: 22px; }
+
+/* تیترها تک‌خطی بمانند */
+h1, h2, h3, .h-display { text-wrap: balance; }
+.h-display { font-size: clamp(1.6rem, 3.2vw, 2.55rem); line-height: 1.62; }
+.h-display .line { display: block; white-space: nowrap; }
+@media (max-width: 720px) { .h-display .line { white-space: normal; } }
+
+/* ---- نوار پیشرفت اسکرول ---- */
+.progress {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  height: 3px;
+  z-index: 300;
+  background: transparent;
+  pointer-events: none;
+}
+.progress__bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--brand-mid), var(--brand-bright));
+  box-shadow: 0 0 12px rgba(33, 224, 107, .8);
+  transition: width .1s linear;
+}
+
+/* ---- نوار متحرک کسب‌وکارها ---- */
+.marquee {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  background: rgba(10, 22, 16, .4);
+  padding-block: 16px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.marquee__track {
+  display: flex;
+  gap: 42px;
+  width: max-content;
+  animation: slide 34s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-3);
+  font-size: .95rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.marquee span::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+  opacity: .7;
+}
+@keyframes slide { to { transform: translateX(50%); } }
+
+/* ---- جدول مقایسه ---- */
+.vs {
+  max-width: 900px;
+  margin-inline: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+.vs__row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  align-items: stretch;
+}
+.vs__row + .vs__row { border-block-start: 1px solid var(--line); }
+.vs__row > * { padding: 18px 20px; font-size: .95rem; line-height: 1.9; }
+.vs__head > * { font-weight: 700; font-size: .92rem; background: rgba(255,255,255,.02); }
+.vs__head .vs__mine { background: rgba(33, 224, 107, .1); color: var(--brand-bright); }
+.vs__label { color: var(--text-2); }
+.vs__other { color: var(--text-3); border-inline: 1px solid var(--line); }
+.vs__mine { color: var(--text); font-weight: 600; background: rgba(33, 224, 107, .04); }
+.vs__row > div { display: flex; align-items: center; gap: 9px; }
+.vs__row svg { width: 17px; height: 17px; flex: none; }
+.vs__other svg { color: #ff8b8b; }
+.vs__mine svg { color: var(--brand); }
+@media (max-width: 720px) {
+  .vs__row { grid-template-columns: 1fr; }
+  .vs__row > * { padding: 12px 16px; }
+  .vs__other, .vs__mine { border-inline: 0; }
+  .vs__label { font-weight: 700; color: var(--text); padding-block-end: 4px; }
+  .vs__head { display: none; }
+  .vs__other::before { content: "ربات کلیدواژه‌ای: "; color: var(--text-3); }
+  .vs__mine::before  { content: "ایجنت‌یار: "; color: var(--brand); font-weight: 700; }
+}
+
+/* ---- بلوک امنیت ---- */
+.safe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+.safe__item {
+  background: linear-gradient(165deg, rgba(33, 224, 107, .06), transparent 50%), var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  text-align: center;
+}
+.safe__ic {
+  width: 52px; height: 52px;
+  margin: 0 auto 18px;
+  border-radius: var(--r-md);
+  display: grid; place-items: center;
+  background: rgba(33, 224, 107, .12);
+  border: 1px solid var(--line-strong);
+  color: var(--brand);
+}
+.safe__ic svg { width: 26px; height: 26px; }
+.safe__item h3 { font-size: 1.02rem; margin-block-end: 10px; }
+.safe__item p { color: var(--text-2); font-size: .93rem; line-height: 2; }
+@media (max-width: 860px) { .safe { grid-template-columns: 1fr; } }
+
+/* ---- پلن‌های قیمت ---- */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  align-items: start;
+  max-width: 1020px;
+  margin-inline: auto;
+}
+.plan {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: 32px 26px 28px;
+  text-align: center;
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.plan:hover { transform: translateY(-5px); border-color: var(--line-strong); }
+.plan--best {
+  border-color: var(--brand);
+  background:
+    radial-gradient(420px 220px at 50% 0%, rgba(33, 224, 107, .16), transparent 70%),
+    var(--surface-2);
+  box-shadow: 0 0 0 1px rgba(33, 224, 107, .3), 0 24px 60px -34px rgba(33, 224, 107, .5);
+  padding-block-start: 44px;
+}
+.plan__badge {
+  position: absolute;
+  inset-block-start: -14px;
+  inset-inline-start: 50%;
+  transform: translateX(50%);
+  background: linear-gradient(135deg, var(--brand-bright), var(--brand-mid));
+  color: var(--text-on-brand);
+  font-size: .82rem;
+  font-weight: 800;
+  padding: 7px 20px;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+  box-shadow: var(--glow-brand);
+}
+.plan__term { font-size: 1.35rem; font-weight: 800; margin-block-end: 14px; }
+.plan--best .plan__term { color: var(--brand-bright); }
+.plan__was {
+  color: var(--text-3);
+  font-size: .95rem;
+  text-decoration: line-through;
+  text-decoration-color: #ff7a7a;
+  text-decoration-thickness: 2px;
+}
+.plan__now {
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.4;
+  margin-block: 4px 2px;
+}
+.plan--best .plan__now { color: var(--brand-bright); }
+.plan__unit { color: var(--text-2); font-size: .95rem; }
+.plan__save {
+  display: inline-block;
+  margin-block-start: 16px;
+  padding: 8px 16px;
+  border-radius: var(--r-md);
+  font-size: .88rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, .05);
+  color: var(--text-2);
+}
+.plan--best .plan__save {
+  background: linear-gradient(135deg, var(--brand-bright), var(--brand-mid));
+  color: var(--text-on-brand);
+}
+.plan__note {
+  margin-block-start: 16px;
+  color: var(--text-3);
+  font-size: .88rem;
+  line-height: 1.9;
+  min-height: 3.4em;
+}
+.plan .btn { margin-block-start: 18px; width: 100%; }
+@media (max-width: 900px) { .plans { grid-template-columns: 1fr; max-width: 420px; } }
+
+.plans-note {
+  max-width: 1020px;
+  margin: 26px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 22px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  background: rgba(33, 224, 107, .05);
+  color: var(--text-2);
+  font-size: .95rem;
+  text-align: center;
+}
+.plans-note svg { width: 20px; height: 20px; color: var(--brand); flex: none; }
+
+/* ---- چرا ۶ ماهه ---- */
+.reasons { max-width: 760px; margin-inline: auto; display: grid; gap: 12px; }
+.reason {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.reason:hover { border-color: var(--line-strong); transform: translateX(-4px); }
+.reason svg { width: 20px; height: 20px; color: var(--brand); flex: none; }
+.reason span { font-size: .97rem; }
+
+/* ---- نظرات ---- */
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.quote {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 26px 24px;
+}
+.quote p { color: var(--text-2); line-height: 2.1; font-size: .95rem; }
+.quote__by { display: flex; align-items: center; gap: 12px; margin-block-start: 20px; }
+.quote__av {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--brand-bright), var(--brand-deep));
+  display: grid; place-items: center;
+  font-weight: 800;
+  color: var(--text-on-brand);
+}
+.quote__by b { display: block; font-size: .94rem; }
+.quote__by span { color: var(--text-3); font-size: .84rem; }
+@media (max-width: 900px) { .quotes { grid-template-columns: 1fr; } }
+
+/* ---- تعریف ایجنت‌یار ---- */
+.about-band {
+  border-radius: var(--r-xl);
+  padding: clamp(34px, 5vw, 56px);
+  border: 1px solid var(--line-strong);
+  background:
+    radial-gradient(700px 320px at 50% 0%, rgba(33, 224, 107, .12), transparent 72%),
+    linear-gradient(160deg, var(--surface-2), var(--bg-deep));
+  text-align: center;
+}
+.about-band__lead {
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--brand-bright);
+  margin-block: 10px 22px;
+}
+.about-band p {
+  color: var(--text-2);
+  max-width: 68ch;
+  margin-inline: auto;
+  line-height: 2.2;
+}
+.about-band p + p { margin-block-start: 16px; }
+
+/* ---- نوار CTA چسبان موبایل ---- */
+.sticky-cta {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: 120;
+  display: none;
+  gap: 10px;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: rgba(5, 10, 7, .92);
+  backdrop-filter: blur(14px);
+  border-block-start: 1px solid var(--line-strong);
+  transform: translateY(110%);
+  transition: transform .35s var(--ease);
+}
+.sticky-cta.is-shown { transform: translateY(0); }
+.sticky-cta .btn { flex: 1; padding-block: 13px; font-size: .95rem; }
+@media (max-width: 860px) {
+  .sticky-cta { display: flex; }
+  body { padding-block-end: 4px; }
+}
+
+/* ---- اصلاح کارت‌ها: متن به لبه نچسبد ---- */
+.card, .pain, .safe__item, .quote {
+  padding-inline: clamp(22px, 2.4vw, 28px);
+  text-align: start;
+}
+.card h3, .card p, .pain h3, .pain p { text-align: start; }
+.safe__item { text-align: center; }
+.step__num { margin-inline-start: 0; }

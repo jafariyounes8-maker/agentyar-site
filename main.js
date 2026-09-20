@@ -325,4 +325,63 @@
     });
   })();
 
+
+  /* ----------------------------------------------------------------------
+     9) نوار پیشرفت اسکرول
+     ---------------------------------------------------------------------- */
+  (function progress() {
+    var bar = $('#progressBar');
+    if (!bar) return;
+    var ticking = false;
+    function draw() {
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      var p = h > 0 ? (window.scrollY / h) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, p)) + '%';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(draw); }
+    }, { passive: true });
+    draw();
+  })();
+
+  /* ----------------------------------------------------------------------
+     10) نوار CTA چسبان موبایل — بعد از هیرو ظاهر می‌شود
+     ---------------------------------------------------------------------- */
+  (function stickyCta() {
+    var el = $('#stickyCta');
+    if (!el) return;
+    var onScroll = function () {
+      var footer = $('.site-footer');
+      var nearFooter = footer && footer.getBoundingClientRect().top < window.innerHeight - 40;
+      el.classList.toggle('is-shown', window.scrollY > 520 && !nearFooter);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+
+  /* ----------------------------------------------------------------------
+     11) هایلایت بخش فعال در منو هنگام اسکرول
+     ---------------------------------------------------------------------- */
+  (function scrollSpy() {
+    var links = $$('.nav a[href^="#"]');
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    var map = {};
+    links.forEach(function (a) {
+      var el = document.querySelector(a.getAttribute('href'));
+      if (el) map[el.id] = a;
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var a = map[e.target.id];
+        if (!a) return;
+        if (e.isIntersecting) {
+          links.forEach(function (x) { x.removeAttribute('aria-current'); });
+          a.setAttribute('aria-current', 'page');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
+  })();
+
 })();
