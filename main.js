@@ -229,7 +229,7 @@
      6) فرم‌ها
      ---------------------------------------------------------------------- */
   (function forms() {
-    var forms = $$('form[data-form], #consultForm, #demoForm');
+    var forms = $$('form.form');
     if (!forms.length) return;
 
     forms.forEach(function (form) {
@@ -382,6 +382,27 @@
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
+  })();
+
+
+  /* ----------------------------------------------------------------------
+     12) کپی لینک مقاله
+     ---------------------------------------------------------------------- */
+  (function copyLink() {
+    var btn = $('#copyLink');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var url = location.href.split('#')[0];
+      var done = function () {
+        var old = btn.getAttribute('aria-label');
+        btn.setAttribute('aria-label', 'لینک کپی شد');
+        btn.style.color = 'var(--brand)';
+        setTimeout(function () { btn.setAttribute('aria-label', old); btn.style.color = ''; }, 1600);
+      };
+      if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, done);
+      else done();
+    });
   })();
 
 })();
