@@ -1873,7 +1873,7 @@ h1, h2, h3, .h-display { text-wrap: balance; }
   .shift__cell { padding: 14px 20px; }
   .shift__cell--before { padding-block-end: 6px; }
   .shift__cell--before::before {
-    content: "امروز";
+    content: "قبل از ایجنت‌یار";
     flex: none;
     margin-inline-end: 10px;
     font-size: .68rem; font-weight: 700;
