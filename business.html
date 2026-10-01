@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ایجنت‌یار بیزنس | برای سازمان‌ها و مجموعه‌های چندشعبه‌ای</title>
-<meta name="description" content="ایجنت‌یار بیزنس برای سازمان‌های بزرگ و مجموعه‌های چندشعبه‌ای: هر شعبه دستیار خودش را دارد، مدیریت یک گزارش یکپارچه از همه می‌بیند و لحن برند در همه‌ی شعبه‌ها یکدست می‌ماند.">
+<title>ایجنت‌یار بیزنس | کمتر انجام دهید و بیشتر نتیجه بگیرید</title>
+<meta name="description" content="ایجنت‌یار بیزنس برای سازمان‌ها: کارهای تکراری و زمان‌بر تیم‌ها را به دستیار هوشمند بسپارید؛ از عملیات روزمره و CRM تا دانش داخلی سازمان، گوگل ادز و سئو.">
 <meta name="theme-color" content="#050806">
 <link rel="canonical" href="https://agentyar.com/business.html">
 
@@ -12,7 +12,7 @@
 <meta property="og:locale" content="fa_IR">
 <meta property="og:site_name" content="Agentyar">
 <meta property="og:title" content="ایجنت‌یار بیزنس">
-<meta property="og:description" content="هر شعبه دستیار خودش، مدیریت یک گزارش یکپارچه.">
+<meta property="og:description" content="کمتر انجام دهید و بیشتر نتیجه بگیرید!">
 <meta property="og:url" content="https://agentyar.com/business.html">
 <meta property="og:image" content="https://agentyar.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -28,6 +28,156 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+<style>
+/* ===== راهکارها: کارت‌های داینامیک (فقط همین بخش) ===== */
+.svc{--px:clamp(22px,2.4vw,28px);display:flex;flex-direction:column;isolation:isolate;}
+.svc::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(33,224,107,.13),transparent 70%);
+  transition:opacity .35s var(--ease);}
+.svc:hover::before{opacity:1;}
+.svc .card__icon{transition:transform .45s var(--ease),box-shadow .45s var(--ease);position:relative;margin-block-start:-46px;
+  background:linear-gradient(145deg,#0f2a1b,#0a1711);box-shadow:0 0 0 6px var(--surface);}
+.svc:hover .card__icon{transform:translateY(-4px) rotate(-6deg);box-shadow:0 0 0 6px var(--surface),0 14px 30px -12px rgba(33,224,107,.6);}
+.svc h3{font-weight:800;}
+.svc p{flex:1;}
+
+/* صحنه‌ی بالای کارت */
+.svc__viz{position:relative;height:150px;margin:-28px calc(-1 * var(--px)) 22px;overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(80% 90% at 50% 0%,rgba(33,224,107,.10),transparent 70%),
+    linear-gradient(rgba(94,214,145,.05) 1px,transparent 1px) 0 0/22px 22px,
+    linear-gradient(90deg,rgba(94,214,145,.05) 1px,transparent 1px) 0 0/22px 22px,
+    var(--bg-elev);}
+.svc__viz > div{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:14px 18px 32px;}
+.svc__viz > .v-crm,.svc__viz > .v-know,.svc__viz > .v-mkt,.svc__viz > .v-trn{flex-direction:column;align-items:stretch;}
+.svc__viz *{animation-play-state:paused !important;}
+.svc.is-visible .svc__viz *{animation-play-state:running !important;}
+.svc-io .svc:not(.in-view) .svc__viz *{animation-play-state:paused !important;}
+
+/* ۱) جریان کار */
+.v-flow{gap:8px;}
+.vn{display:grid;justify-items:center;gap:6px;flex:none;}
+.vn b{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;color:var(--text-3);
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);}
+.vn b svg{width:19px;height:19px;}
+.vn em{font-style:normal;font-size:.72rem;font-weight:700;color:var(--text-3);white-space:nowrap;}
+.vn--k b{color:var(--brand);border-color:var(--line-strong);background:rgba(33,224,107,.1);animation:vPulse 2.6s var(--ease) infinite;}
+.vn--k em{color:var(--brand);}
+.vn--d b{color:var(--brand);border-color:var(--line-strong);}
+.vl{position:relative;flex:1;max-width:84px;height:2px;margin-block-end:22px;border-radius:2px;background:rgba(94,214,145,.16);}
+.vl s{position:absolute;top:-3px;inset-inline-start:0;width:8px;height:8px;border-radius:50%;background:var(--brand);
+  box-shadow:0 0 12px var(--brand);animation:vRun 2.6s var(--ease) infinite;}
+.vl + .vn + .vl s{animation-delay:1.3s;}
+@keyframes vRun{0%{inset-inline-start:0;opacity:0;}15%{opacity:1;}85%{opacity:1;}100%{inset-inline-start:calc(100% - 8px);opacity:0;}}
+@keyframes vPulse{0%,100%{box-shadow:0 0 0 0 rgba(33,224,107,.0);}50%{box-shadow:0 0 0 7px rgba(33,224,107,.12);}}
+
+/* ۲) CRM */
+.v-crm{flex-direction:column;gap:6px;align-items:stretch;padding-inline:22px;}
+.vr{display:flex;align-items:center;gap:10px;padding:5px 9px;border-radius:9px;background:rgba(255,255,255,.025);
+  border:1px solid rgba(255,255,255,.07);animation:vRow 4.8s var(--ease) infinite;animation-delay:calc(var(--i) * 1.6s);}
+.vr em{font-style:normal;font-size:.68rem;font-weight:800;color:var(--brand);padding:1px 8px;border-radius:99px;background:rgba(33,224,107,.1);min-width:52px;text-align:center;}
+.vr i{flex:1;height:5px;border-radius:3px;background:rgba(255,255,255,.08);}
+.vr b{width:18px;height:18px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.14);color:transparent;
+  animation:vTick 4.8s var(--ease) infinite;animation-delay:calc(var(--i) * 1.6s);}
+.vr b svg{width:11px;height:11px;}
+@keyframes vRow{0%,8%{border-color:rgba(255,255,255,.07);background:rgba(255,255,255,.025);}
+  15%,30%{border-color:var(--line-strong);background:rgba(33,224,107,.07);}40%,100%{border-color:rgba(255,255,255,.07);background:rgba(255,255,255,.025);}}
+@keyframes vTick{0%,18%{color:transparent;background:transparent;border-color:rgba(255,255,255,.14);}
+  26%,88%{color:var(--text-on-brand);background:var(--brand);border-color:var(--brand);}100%{color:transparent;background:transparent;}}
+
+/* ۳) دانش داخلی */
+.v-know{flex-direction:column;gap:8px;align-items:stretch;padding-inline:18px;}
+.vq{display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:10px;font-size:.76rem;font-weight:700;color:var(--text);
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);}
+.vq svg{width:14px;height:14px;color:var(--text-3);flex:none;}
+.vq__t{white-space:nowrap;overflow:hidden;animation:vType 6s steps(28) infinite;}
+.va{display:grid;gap:5px;padding:7px 11px;border-radius:10px;font-size:.72rem;color:var(--text-2);
+  border:1px solid var(--line-strong);background:rgba(33,224,107,.06);animation:vAns 6s var(--ease) infinite;}
+.va em{display:inline-flex;align-items:center;gap:5px;width:max-content;font-style:normal;font-size:.66rem;font-weight:800;color:var(--brand);}
+.va em svg{width:12px;height:12px;}
+@keyframes vType{0%{clip-path:inset(0 0 0 100%);}30%,92%{clip-path:inset(0 0 0 0);}100%{clip-path:inset(0 0 0 0);opacity:0;}}
+@keyframes vAns{0%,34%{opacity:0;transform:translateY(6px);}44%,90%{opacity:1;transform:none;}100%{opacity:0;}}
+
+/* ۴) مارکتینگ */
+.v-mkt{flex-direction:column;gap:9px;align-items:stretch;padding-inline:18px;}
+.vc{display:flex;align-items:center;gap:5px;justify-content:center;}
+.vc em{font-style:normal;font-size:.66rem;font-weight:800;color:var(--text-3);padding:2px 8px;border-radius:7px;border:1px solid rgba(255,255,255,.1);white-space:nowrap;}
+.vc em.on{color:var(--brand);border-color:var(--line-strong);background:rgba(33,224,107,.08);}
+.vc i{width:10px;height:1px;background:rgba(255,255,255,.2);}
+.vb{direction:ltr;display:flex;align-items:flex-end;gap:7px;height:44px;border-bottom:1px solid rgba(255,255,255,.1);}
+.vb i{flex:1;height:100%;border-radius:4px 4px 0 0;transform-origin:bottom;transform:scaleY(var(--h));
+  background:linear-gradient(180deg,var(--brand),rgba(33,224,107,.2));animation:vBar 5s var(--ease) infinite;animation-delay:calc(var(--i) * .12s);}
+@keyframes vBar{0%{transform:scaleY(.1);}30%,85%{transform:scaleY(var(--h));}100%{transform:scaleY(.1);}}
+
+/* ۵) اختصاصی */
+.v-cus svg{width:100%;height:100%;max-width:300px;}
+.v-cus path{fill:none;stroke:rgba(94,214,145,.4);stroke-width:1.5;stroke-dasharray:4 5;animation:vDash 5s linear infinite;}
+.v-cus circle{fill:#0d1a13;stroke:rgba(94,214,145,.45);stroke-width:1.5;}
+.v-cus circle.k{fill:rgba(33,224,107,.18);stroke:var(--brand);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:vCore 2.8s var(--ease) infinite;}
+@keyframes vDash{to{stroke-dashoffset:-54;}}
+@keyframes vCore{0%,100%{transform:scale(1);}50%{transform:scale(1.15);}}
+
+/* ۶) آموزش تیم */
+.v-trn{flex-direction:column;gap:7px;align-items:stretch;padding-inline:22px;}
+.vstep{display:flex;align-items:center;gap:9px;font-size:.74rem;font-weight:700;color:var(--text-3);animation:vStepT 6s var(--ease) infinite;animation-delay:calc(var(--i) * 1.2s);}
+.vstep b{width:18px;height:18px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.16);color:transparent;
+  animation:vTick2 6s var(--ease) infinite;animation-delay:calc(var(--i) * 1.2s);}
+.vstep b svg{width:11px;height:11px;}
+.vstep em{font-style:normal;}
+.vp{height:4px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-block-start:2px;}
+.vp i{display:block;height:100%;background:var(--brand);transform-origin:right;animation:vProg 6s var(--ease) infinite;}
+@keyframes vTick2{0%,8%{color:transparent;background:transparent;border-color:rgba(255,255,255,.16);}14%,85%{color:var(--text-on-brand);background:var(--brand);border-color:var(--brand);}100%{color:transparent;}}
+@keyframes vStepT{0%,8%{color:var(--text-3);}14%,85%{color:var(--text);}100%{color:var(--text-3);}}
+@keyframes vProg{0%{transform:scaleX(0);}55%,85%{transform:scaleX(1);}100%{transform:scaleX(0);}}
+
+/* پایین کارت */
+.svc__foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-block-start:18px;flex-wrap:wrap;}
+.svc__out{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:800;color:var(--brand);
+  padding:5px 12px;border-radius:var(--r-full);background:rgba(33,224,107,.08);border:1px solid var(--line);}
+.svc__out svg{width:13px;height:13px;}
+.svc__btn{display:inline-flex;align-items:center;gap:5px;padding:5px 4px;font:inherit;font-size:.82rem;font-weight:700;color:var(--text-2);
+  background:none;border:0;cursor:pointer;}
+.svc__btn svg{width:15px;height:15px;transition:transform .3s var(--ease);}
+.svc__btn:hover{color:var(--text);}
+.svc__btn[aria-expanded="true"] svg{transform:rotate(180deg);}
+.svc__btn:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:6px;}
+.svc__det{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease);}
+.svc__det > div{overflow:hidden;}
+.svc.open .svc__det{grid-template-rows:1fr;}
+.svc__det b{display:block;margin-block-start:16px;padding-block-start:14px;border-top:1px solid var(--line);font-size:.82rem;color:var(--text);}
+.svc__det ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:7px;}
+.svc__det li{position:relative;padding-inline-start:16px;font-size:.86rem;color:var(--text-2);line-height:1.8;}
+.svc__det li::before{content:"";position:absolute;inset-inline-start:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--brand);}
+
+@media (max-width:640px){.svc__viz{height:146px;}.vl{max-width:56px;}}
+@media (prefers-reduced-motion:reduce){
+  .svc__viz *{animation:none !important;}
+  .vq__t{clip-path:none;}.va{opacity:1;transform:none;}
+  .vr:first-child b,.vstep b{color:var(--text-on-brand);background:var(--brand);border-color:var(--brand);}
+  .vp i{transform:scaleX(1);}
+  .svc:hover .card__icon{transform:none;}
+}
+
+/* ===== مشکل‌ها → راهکار ===== */
+.pain--biz{display:flex;flex-direction:column;}
+.pain--biz p{flex:1;}
+.pain__fix{display:inline-flex;align-items:center;gap:6px;margin-block-start:16px;padding-block-start:14px;border-top:1px solid rgba(255,120,120,.12);
+  font-size:.84rem;font-weight:700;color:var(--brand);transition:gap var(--dur) var(--ease);}
+.pain__fix span{color:var(--text-3);font-weight:600;white-space:nowrap;}
+.pain__fix svg{width:15px;height:15px;flex:none;transition:transform var(--dur) var(--ease);}
+.pain__fix:hover{gap:10px;}
+.pain__fix:hover svg{transform:translateX(-3px);}
+.pain-bridge{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-block-start:clamp(32px,4vw,48px);text-align:center;}
+.pain-bridge p{margin:0;font-size:1.08rem;color:var(--text);}
+.pain-bridge b{color:var(--brand);}
+.sticky-cta .btn{white-space:nowrap;padding-inline:12px;}
+.sticky-cta .btn--primary{flex:1.6;}
+@media (max-width:420px){.sticky-cta .btn{font-size:.88rem;}.cta-band .btn{font-size:.95rem;padding-inline:18px;}}
+.cta-note{margin:18px 0 0;font-size:.85rem;color:var(--text-3);text-align:center;}
+.cta-band h2{max-width:30ch;margin-inline:auto;font-size:clamp(1.3rem,2.6vw,2.1rem);line-height:1.6;}
+.svc.svc--hl{border-color:var(--brand);box-shadow:0 0 0 3px rgba(33,224,107,.22),0 30px 60px -34px rgba(0,0,0,1);}
+</style>
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -52,7 +202,7 @@
     </nav>
 
     <div class="header__actions">
-      <a class="btn btn--primary btn--sm" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%E2%80%8C%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85.%20%D9%86%D8%A7%D9%85%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D9%87%20%D9%88%20%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D8%B4%D8%B9%D8%A8%D9%87%E2%80%8C%D9%87%D8%A7%3A%20">مشاوره و خرید</a>
+      <a class="btn btn--primary btn--sm" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%B4%D8%B1%D9%88%D8%B9%20%D9%87%D9%85%DA%A9%D8%A7%D8%B1%DB%8C%20%D8%A8%D8%A7%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85.%20%D9%86%D8%A7%D9%85%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%3A%20">شروع همکاری</a>
       <button class="burger" id="burger" aria-label="باز کردن منو" aria-expanded="false" aria-controls="drawer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -66,22 +216,22 @@
   <section class="hero--business">
     <div class="container">
       <h1 class="h-display">
-        <span class="line">هر شعبه دستیار خودش را دارد</span>
-        <span class="line grad-text">شما یک گزارش از همه می‌بینید</span>
+        <span class="line">کمتر انجام دهید</span>
+        <span class="line grad-text">و بیشتر نتیجه بگیرید!</span>
       </h1>
       <p class="lead">
-        در یک سازمان چندشعبه‌ای، مسئله دیگر پاسخ دادن به یک پیام نیست.
-        مسئله این است که نمی‌دانید کدام شعبه، هر ماه چند مشتری را از دست می‌دهد.
+        کارهای تکراری و زمان‌بر سازمان را به دستیار هوشمند بسپارید؛
+        از عملیات روزمره و پیگیری مشتری تا CRM، اسناد داخلی و گزارش‌گیری.
       </p>
 
       <div class="btn-row">
-        <a class="btn btn--primary btn--lg" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%E2%80%8C%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85.%20%D9%86%D8%A7%D9%85%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D9%87%20%D9%88%20%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D8%B4%D8%B9%D8%A8%D9%87%E2%80%8C%D9%87%D8%A7%3A%20">مشاوره و خرید</a>
-        <a class="btn btn--ghost btn--lg" href="#solutions">مشاهده‌ی راهکارها</a>
+        <a class="btn btn--primary btn--lg" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D8%A7%D9%88%D9%84%DB%8C%D9%86%20%D9%81%D8%B1%D8%A2%DB%8C%D9%86%D8%AF%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%E2%80%8C%D9%85%D8%A7%D9%86%20%D8%B1%D8%A7%20%D8%A8%D9%87%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D8%A8%D8%B3%D9%BE%D8%A7%D8%B1%D9%85.%20%D9%86%D8%A7%D9%85%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%20%D9%88%20%D9%81%D8%B1%D8%A2%DB%8C%D9%86%D8%AF%3A%20">اولین فرآیند را بسپارید</a>
+        <a class="btn btn--ghost btn--lg" href="#problems">چه کارهایی قابل واگذاری است؟</a>
       </div>
 
       <div class="stats">
         <div class="stat">
-          <div class="stat__num" data-count="50" data-suffix="+" dir="ltr">۵۰+</div>
+          <div class="stat__num" data-count="10" data-suffix="+" dir="ltr">۱۰+</div>
           <div class="stat__label">سازمان همکار</div>
         </div>
         <div class="stat">
@@ -96,61 +246,173 @@
     </div>
   </section>
 
+  <!-- ================= مشکل‌ها ================= -->
+  <section class="section" id="problems">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>کجای کار سازمان شما گیر می‌کند؟</h2>
+        <p class="lead">مشکل معمولاً کمبود آدم یا ابزار نیست؛ وقت تیم صرف کارهایی می‌شود که نباید دستی انجام شوند.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="pain pain--biz reveal">
+          <div class="pain__ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+          </div>
+          <h3>کارهای تکراری که وقت متخصص‌ها را می‌خورد</h3>
+          <p>بخش بزرگی از روز تیم صرف ایمیل، ورود اطلاعات و گزارش‌هایی می‌شود که هر هفته عین هم تکرار می‌شوند.</p>
+          <a class="pain__fix" href="#sol-auto" data-sol="sol-auto"><span>راهکار ما:</span> خودکارسازی عملیات<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
+        </article>
+        <article class="pain pain--biz reveal">
+          <div class="pain__ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6"/></svg>
+          </div>
+          <h3>لیدهایی که پیگیری نمی‌شوند</h3>
+          <p>در شلوغی کار روزمره، پیگیری لید و مشتری عقب می‌افتد و CRM پر از اطلاعات ناقص و قدیمی می‌ماند.</p>
+          <a class="pain__fix" href="#sol-crm" data-sol="sol-crm"><span>راهکار ما:</span> پیگیری لید و CRM<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
+        </article>
+        <article class="pain pain--biz reveal">
+          <div class="pain__ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H7a2 2 0 0 0-2 2v13"/><path d="M19 6h-8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/><path d="M13 12h4M13 16h3"/></svg>
+          </div>
+          <h3>اطلاعاتی که فقط چند نفر بلدند</h3>
+          <p>جواب خیلی از سوال‌ها لای فایل‌ها، ایمیل‌ها و ذهن چند همکار است؛ اگر نباشند، کار می‌خوابد.</p>
+          <a class="pain__fix" href="#sol-know" data-sol="sol-know"><span>راهکار ما:</span> دستیار دانش داخلی<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
+        </article>
+        <article class="pain pain--biz reveal">
+          <div class="pain__ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>تیم مارکتینگی که به همه‌چیز نمی‌رسد</h3>
+          <p>تحقیق کلمه‌ی کلیدی، متن آگهی، گزارش کمپین و سئو؛ کارهای اجرایی‌ای که وقت تحلیل و تصمیم را می‌گیرند.</p>
+          <a class="pain__fix" href="#sol-mkt" data-sol="sol-mkt"><span>راهکار ما:</span> همراه گوگل ادز و سئو<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
+        </article>
+        <article class="pain pain--biz reveal">
+          <div class="pain__ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19.4 14.4a2.5 2.5 0 1 0 0-4.8H18V7a1 1 0 0 0-1-1h-2.6a2.5 2.5 0 1 0-4.8 0H7a1 1 0 0 0-1 1v2.6a2.5 2.5 0 1 0 0 4.8V17a1 1 0 0 0 1 1h2.6a2.5 2.5 0 1 0 4.8 0H17a1 1 0 0 0 1-1v-2.6z"/></svg>
+          </div>
+          <h3>ابزارهایی که با روال سازمان جور نیستند</h3>
+          <p>نرم‌افزارهای آماده برای یک شرکت فرضی ساخته شده‌اند، نه برای فرآیند و داده‌های شما؛ آخرش باز کار دستی برمی‌گردد.</p>
+          <a class="pain__fix" href="#sol-cus" data-sol="sol-cus"><span>راهکار ما:</span> دستیار اختصاصی<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
+        </article>
+        <article class="pain pain--biz reveal">
+          <div class="pain__ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/><path d="m9 9 6 4M15 9l-6 4"/></svg>
+          </div>
+          <h3>ابزار جدیدی که کسی با آن کار نمی‌کند</h3>
+          <p>ابزار خریداری می‌شود، اما بدون آموزش روی کار واقعی، تیم دوباره به همان روال قبلی برمی‌گردد.</p>
+          <a class="pain__fix" href="#sol-trn" data-sol="sol-trn"><span>راهکار ما:</span> آماده‌سازی تیم<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
+        </article>
+      </div>
+
+      <div class="pain-bridge reveal">
+        <p>برای هر کدام از این مشکل‌ها، <b>یک راهکار مشخص</b> داریم.</p>
+        <a class="btn btn--ghost" href="#solutions">راهکار هر مشکل را ببینید</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= راهکارها ================= -->
   <section class="section" id="solutions">
     <div class="container">
       <div class="section-head reveal">
         <h2>راهکارهای ایجنت‌یار بیزنس</h2>
-        <p class="lead">ساخته‌شده برای برندها، زنجیره‌ها و سازمان‌هایی که چند شعبه و چند تیم را هم‌زمان اداره می‌کنند.</p>
+        <p class="lead">برای سازمان‌هایی که می‌خواهند کارهای تکراری تیم‌هایشان را به دستیار هوشمند بسپارند و نتیجه را با عدد ببینند.</p>
       </div>
 
-      <div class="grid grid--3">
-        <article class="card reveal">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="7" height="12" rx="1.5"/><rect x="14" y="4" width="7" height="17" rx="1.5"/><path d="M3 21h18"/></svg>
+      <div class="grid grid--3 svc-grid">
+        <article class="card svc reveal" data-k="auto" id="sol-auto">
+          <div class="svc__viz" aria-hidden="true">
+          <div class="v-flow">
+            <span class="vn"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></b><em>کار دستی</em></span>
+            <i class="vl"><s></s></i>
+            <span class="vn vn--k"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.6L12 15l-1.8-4.4L5.5 9l4.7-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></b><em>دستیار هوشمند</em></span>
+            <i class="vl"><s></s></i>
+            <span class="vn vn--d"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></b><em>انجام شد</em></span>
           </div>
-          <h3>مدیریت چندشعبه</h3>
-          <p>هر شعبه دستیار، خدمات و ساعت کاری خودش را دارد؛ همه از یک پنل مرکزی کنترل می‌شوند.</p>
+          </div>
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M7 10v4a3 3 0 0 0 3 3h4"/></svg></div>
+          <h3>خودکارسازی عملیات تکراری</h3>
+          <p>ایمیل‌ها، ورود اطلاعات، جابه‌جایی داده بین سیستم‌ها و گزارش‌های دوره‌ای را دستیار هوشمند انجام می‌دهد؛ تیم فقط جایی وارد می‌شود که تصمیم لازم است.</p>
+          <div class="svc__foot">
+            <span class="svc__out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>کار دستی کمتر</span>
+            <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-auto">جزئیات<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="svc__det" id="svc-auto"><div><b>چه چیزی تحویل می‌گیرید</b><ul><li>نقشه‌ی دقیق فرآیند فعلی</li><li>ساخت دستیار روی همان فرآیند</li><li>نقاط تأیید انسانی</li><li>اندازه‌گیری قبل و بعد</li></ul></div></div>
         </article>
-
-        <article class="card reveal">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+        <article class="card svc reveal" data-k="crm" id="sol-crm">
+          <div class="svc__viz" aria-hidden="true">
+          <div class="v-crm"><span class="vr" style="--i:0"><em>فوری</em><i></i><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></b></span><span class="vr" style="--i:1"><em>امروز</em><i></i><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></b></span><span class="vr" style="--i:2"><em>این هفته</em><i></i><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></b></span></div>
           </div>
-          <h3>گزارش یکپارچه‌ی مدیریتی</h3>
-          <p>شعبه‌ها را کنار هم می‌بینید: کدام بیشترین پیام را از دست می‌دهد و کدام بیشترین نوبت را ثبت می‌کند.</p>
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
+          <h3>پیگیری لیدها و مدیریت CRM</h3>
+          <p>منطق پیگیری را شما تعیین می‌کنید؛ دستیار هوشمند لیدها را دسته‌بندی می‌کند، به‌موقع پیگیری می‌کند و CRM را همیشه به‌روز نگه می‌دارد.</p>
+          <div class="svc__foot">
+            <span class="svc__out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>پیگیری منظم و به‌موقع</span>
+            <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-crm">جزئیات<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="svc__det" id="svc-crm"><div><b>چه چیزی تحویل می‌گیرید</b><ul><li>تعریف قواعد پیگیری با تیم فروش</li><li>اولویت‌بندی و دسته‌بندی لیدها</li><li>ثبت خودکار تعامل‌ها در CRM</li><li>گزارش وضعیت قیف فروش</li></ul></div></div>
         </article>
-
-        <article class="card reveal">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 17.5z"/><path d="M8 9h8M8 12.5h5"/></svg>
+        <article class="card svc reveal" data-k="know" id="sol-know">
+          <div class="svc__viz" aria-hidden="true">
+          <div class="v-know">
+            <span class="vq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="vq__t">سقف تخفیف سفارش عمده چقدر است؟</span></span>
+            <span class="va"><span>طبق آیین‌نامه‌ی فروش، تا ده درصد با تأیید مدیر</span><em><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>منبع: آیین‌نامه‌ی فروش</em></span>
           </div>
-          <h3>لحن یکدست برند</h3>
-          <p>همه‌ی شعبه‌ها با یک لحن، یک سیاست قیمت و یک استاندارد پاسخ‌گویی کار می‌کنند.</p>
+          </div>
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div>
+          <h3>دستیار دانش داخلی سازمان</h3>
+          <p>کارکنان سوال‌شان را می‌پرسند و جواب را از اسناد، آیین‌نامه‌ها و فایل‌های خود سازمان می‌گیرند؛ همراه با منبع، بدون گشتن دنبال آدم یا فایل.</p>
+          <div class="svc__foot">
+            <span class="svc__out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>دسترسی سریع‌تر به اطلاعات</span>
+            <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-know">جزئیات<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="svc__det" id="svc-know"><div><b>چه چیزی تحویل می‌گیرید</b><ul><li>جمع‌آوری و مرتب‌سازی اسناد</li><li>سطح دسترسی برای هر تیم</li><li>پاسخ همراه با منبع</li><li>به‌روزرسانی با تغییر اسناد</li></ul></div></div>
         </article>
-
-        <article class="card reveal">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m17 11 2 2 4-4"/></svg>
+        <article class="card svc reveal" data-k="mkt" id="sol-mkt">
+          <div class="svc__viz" aria-hidden="true">
+          <div class="v-mkt">
+            <span class="vc"><em class="on">کلمه‌ی کلیدی</em><i></i><em>متن آگهی</em><i></i><em class="on">تحلیل کمپین</em></span>
+            <span class="vb"><i style="--h:0.34;--i:0"></i><i style="--h:0.46;--i:1"></i><i style="--h:0.4;--i:2"></i><i style="--h:0.62;--i:3"></i><i style="--h:0.74;--i:4"></i><i style="--h:0.94;--i:5"></i></span>
           </div>
-          <h3>کمپین بازگرداندن مشتری</h3>
-          <p>روی کل پایگاه مشتریان سازمان اجرا می‌شود، همراه با گزارش اینکه هر کمپین چند نفر را بازگرداند.</p>
+          </div>
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg></div>
+          <h3>همراه تیم مارکتینگ در گوگل ادز و سئو</h3>
+          <p>دستیار هوشمند ما کارهای وقت‌گیر تیم دیجیتال مارکتینگ را سبک می‌کند: تحقیق کلمه‌ی کلیدی، نوشتن و تست متن آگهی، تحلیل داده‌ی کمپین و پیشنهادهای سئو. تصمیم نهایی با تیم شماست.</p>
+          <div class="svc__foot">
+            <span class="svc__out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>اجرای سریع‌تر، تحلیل دقیق‌تر</span>
+            <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-mkt">جزئیات<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="svc__det" id="svc-mkt"><div><b>چه چیزی تحویل می‌گیرید</b><ul><li>تحقیق و دسته‌بندی کلمات کلیدی</li><li>نوشتن و تست متن آگهی</li><li>تحلیل هفتگی داده‌ی کمپین</li><li>پیشنهادهای سئو برای محتوا</li></ul></div></div>
         </article>
-
-        <article class="card reveal">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <article class="card svc reveal" data-k="cus" id="sol-cus">
+          <div class="svc__viz" aria-hidden="true">
+          <div class="v-cus"><svg viewBox="0 0 280 96" preserveAspectRatio="xMidYMid meet">
+            <path d="M140 48 62 22M140 48 62 74M140 48 218 22M140 48 218 74M62 22v52M218 22v52"/>
+            <circle cx="62" cy="22" r="8"/><circle cx="62" cy="74" r="8"/><circle cx="218" cy="22" r="8"/><circle cx="218" cy="74" r="8"/>
+            <circle class="k" cx="140" cy="48" r="13"/></svg></div>
           </div>
-          <h3>سطح دسترسی و گزارش تغییرات</h3>
-          <p>مدیر هر شعبه فقط شعبه‌ی خودش را می‌بیند و مدیریت، همه را. از هر تغییر سابقه‌ی کامل باقی می‌ماند.</p>
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.4 14.4a2.5 2.5 0 1 0 0-4.8H18V7a1 1 0 0 0-1-1h-2.6a2.5 2.5 0 1 0-4.8 0H7a1 1 0 0 0-1 1v2.6a2.5 2.5 0 1 0 0 4.8V17a1 1 0 0 0 1 1h2.6a2.5 2.5 0 1 0 4.8 0H17a1 1 0 0 0 1-1v-2.6z"/></svg></div>
+          <h3>دستیار اختصاصی برای فرآیند شما</h3>
+          <p>وقتی هیچ ابزار آماده‌ای با روال کاری سازمان جور نیست، دستیار را دقیقاً روی فرآیند و داده‌های خودتان می‌سازیم و کنار سیستم‌های فعلی‌تان راه می‌اندازیم.</p>
+          <div class="svc__foot">
+            <span class="svc__out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>متناسب با روال شما</span>
+            <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-cus">جزئیات<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="svc__det" id="svc-cus"><div><b>چه چیزی تحویل می‌گیرید</b><ul><li>بررسی نیاز و فرآیند</li><li>طراحی و ساخت اختصاصی</li><li>اتصال به سیستم‌های فعلی</li><li>پشتیبانی و توسعه</li></ul></div></div>
         </article>
-
-        <article class="card reveal">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <article class="card svc reveal" data-k="trn" id="sol-trn">
+          <div class="svc__viz" aria-hidden="true">
+          <div class="v-trn"><span class="vstep" style="--i:0"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></b><em>روی کار واقعی تیم</em></span><span class="vstep" style="--i:1"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></b><em>تمرین با دستیار</em></span><span class="vstep" style="--i:2"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></b><em>استفاده‌ی روزانه</em></span><span class="vp"><i></i></span></div>
           </div>
-          <h3>اتصال به سیستم‌های فعلی</h3>
-          <p>روی فرایندها و داده‌های خودتان ساخته می‌شود و کنار ابزارهای فعلی سازمان کار می‌کند.</p>
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+          <h3>آماده کردن تیم برای کار با دستیار</h3>
+          <p>دستیار وقتی نتیجه می‌دهد که تیم واقعاً با آن کار کند. آموزش را روی کارهای واقعی خود تیم‌تان برگزار می‌کنیم، نه با مثال‌های کتابی.</p>
+          <div class="svc__foot">
+            <span class="svc__out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>استفاده در کار روزانه</span>
+            <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-trn">جزئیات<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="svc__det" id="svc-trn"><div><b>چه چیزی تحویل می‌گیرید</b><ul><li>کارگاه روی کارهای واقعی تیم</li><li>راهنمای کوتاه برای هر نقش</li><li>همراهی در هفته‌های اول</li><li>جمع‌بندی بازخورد و اصلاح</li></ul></div></div>
         </article>
       </div>
     </div>
@@ -166,18 +428,18 @@
       <div class="grid grid--3 steps">
         <article class="card step reveal">
           <div class="step__num">۱</div>
-          <h3>از یک شعبه شروع می‌کنیم</h3>
-          <p>روی یک شعبه فعال می‌شود، نتیجه‌اش اندازه‌گیری می‌شود و بعد به بقیه تعمیم پیدا می‌کند. نه پروژه‌ی چندماهه، نه ریسک یکباره.</p>
+          <h3>از یک فرآیند شروع می‌کنیم</h3>
+          <p>روی یک فرآیند واقعی فعال می‌شود، نتیجه‌اش اندازه‌گیری می‌شود و بعد به بقیه‌ی سازمان تعمیم پیدا می‌کند. نه پروژه‌ی چندماهه، نه ریسک یکباره.</p>
         </article>
         <article class="card step reveal">
           <div class="step__num">۲</div>
           <h3>ساخته‌شده برای بازار ایران</h3>
-          <p>فارسی طبیعی و روان، روی دایرکت اینستاگرام و واتساپ؛ همان کانال‌هایی که مشتری ایرانی واقعاً در آن‌هاست.</p>
+          <p>فارسی طبیعی و روان، روی همان ابزارها، اسناد و کانال‌هایی که سازمان‌های ایرانی هر روز با آن‌ها کار می‌کنند.</p>
         </article>
         <article class="card step reveal">
           <div class="step__num">۳</div>
           <h3>قابل اندازه‌گیری</h3>
-          <p>هر دستیار با عدد مشخص سنجیده می‌شود: پاسخ به‌موقع، نوبت ثبت‌شده و مشتری بازگشته.</p>
+          <p>هر دستیار با عدد مشخص سنجیده می‌شود: زمان صرف‌شده، حجم کار دستی و سرعت پاسخ، قبل و بعد از اجرا.</p>
         </article>
       </div>
     </div>
@@ -187,19 +449,20 @@
   <section class="section section--tight" id="start">
     <div class="container">
       <div class="cta-band reveal">
-        <h2>مجموعه‌تان را با هم بررسی کنیم</h2>
+        <h2>هر هفته که بگذرد، تیم شما همان کارهای تکراری را دوباره انجام می‌دهد.</h2>
         <p class="lead" style="max-width:62ch;margin-inline:auto">
-          نام مجموعه و تعداد شعبه‌هایتان را در واتساپ بفرستید. در یک جلسه‌ی کوتاه مشخص می‌کنیم
-          هر شعبه ماهانه چند مشتری را پشت پیام‌های بی‌پاسخ از دست می‌دهد و از کدام شعبه شروع کنیم
-          که سریع‌ترین اثر روی فروش دیده شود.
+          فرآیندی را که بیشترین وقت تیم‌تان را می‌گیرد معرفی کنید. در جلسه‌ی ارزیابی مشخص می‌کنیم
+          کدام بخش‌هایش به دستیار هوشمند سپرده می‌شود، کدام تصمیم‌ها دست تیم می‌ماند
+          و از کجا شروع کنیم که اثرش زودتر در عدد دیده شود.
         </p>
         <div class="btn-row" style="justify-content:center">
-          <a class="btn btn--primary btn--lg" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%E2%80%8C%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85.%20%D9%86%D8%A7%D9%85%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D9%87%20%D9%88%20%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D8%B4%D8%B9%D8%A8%D9%87%E2%80%8C%D9%87%D8%A7%3A%20">
-            مشاوره و خرید در واتساپ
+          <a class="btn btn--primary btn--lg" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%A7%D8%B1%D8%B2%DB%8C%D8%A7%D8%A8%DB%8C%20%D9%81%D8%B1%D8%A2%DB%8C%D9%86%D8%AF%20%D8%AF%D8%A7%D8%B1%D9%85.%20%D9%86%D8%A7%D9%85%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%20%D9%88%20%D9%81%D8%B1%D8%A2%DB%8C%D9%86%D8%AF%DB%8C%20%DA%A9%D9%87%20%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1%DB%8C%D9%86%20%D9%88%D9%82%D8%AA%20%D8%AA%DB%8C%D9%85%20%D8%B1%D8%A7%20%D9%85%DB%8C%E2%80%8C%DA%AF%DB%8C%D8%B1%D8%AF%3A%20">
+            درخواست ارزیابی فرآیند
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.8l-.4-.2-2.6.7.7-2.5-.3-.4A8 8 0 0 1 12 4m-3.3 4.3c-.2 0-.5 0-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3.2 5 4.4 2.4 1 2.9.8 3.4.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-1 1.3c-.2.2-.4.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.1-.3 0-.4.1-.6l.5-.5.3-.6v-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4z"/></svg>
           </a>
-          <a class="btn btn--ghost btn--lg" href="https://instagram.com/agentyar_com" target="_blank" rel="noopener">ارسال دایرکت</a>
+          <a class="btn btn--ghost btn--lg" href="https://instagram.com/agentyar_com" target="_blank" rel="noopener">پیام در اینستاگرام</a>
         </div>
+        <p class="cta-note">جلسه‌ی کوتاه · بدون تعهد برای ادامه · هماهنگی از طریق واتساپ</p>
       </div>
     </div>
   </section>
@@ -212,12 +475,12 @@
         <a class="logo" href="index.html">
           <img class="logo__img" src="logo.png" alt="ایجنت‌یار" width="120" height="34">
         </a>
-        <p>همراه هوشمند کسب‌وکار شما — به مشتری پاسخ می‌دهد، نوبت ثبت می‌کند و یادآوری می‌فرستد.</p>
+        <p>ایجنت‌یار بیزنس — اجرای هوشمند فرآیندهای واقعی سازمان، از عملیات روزمره تا CRM و بازاریابی.</p>
         <div class="socials">
           <a href="https://instagram.com/agentyar_com" target="_blank" rel="noopener" aria-label="اینستاگرام">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
           </a>
-          <a href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%E2%80%8C%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85.%20%D9%86%D8%A7%D9%85%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D9%87%20%D9%88%20%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D8%B4%D8%B9%D8%A8%D9%87%E2%80%8C%D9%87%D8%A7%3A%20" target="_blank" rel="noopener" aria-label="واتساپ">
+          <a href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%E2%80%8C%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85.%20%D9%86%D8%A7%D9%85%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%20%D9%88%20%D9%81%D8%B1%D8%A2%DB%8C%D9%86%D8%AF%DB%8C%20%DA%A9%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%DB%8C%D9%85%20%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C%20%D8%B4%D9%88%D8%AF%3A%20" target="_blank" rel="noopener" aria-label="واتساپ">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.8l-.4-.2-2.6.7.7-2.5-.3-.4A8 8 0 0 1 12 4m-3.3 4.3c-.2 0-.5 0-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3.2 5 4.4 2.4 1 2.9.8 3.4.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-1 1.3c-.2.2-.4.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.1-.3 0-.4.1-.6l.5-.5.3-.6v-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4z"/></svg>
           </a>
         </div>
@@ -245,7 +508,7 @@
       <div>
         <h4>ارتباط</h4>
         <nav class="footer__links">
-          <a href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%E2%80%8C%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85.%20%D9%86%D8%A7%D9%85%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D9%87%20%D9%88%20%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D8%B4%D8%B9%D8%A8%D9%87%E2%80%8C%D9%87%D8%A7%3A%20">واتساپ</a>
+          <a href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%E2%80%8C%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85.%20%D9%86%D8%A7%D9%85%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%20%D9%88%20%D9%81%D8%B1%D8%A2%DB%8C%D9%86%D8%AF%DB%8C%20%DA%A9%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%DB%8C%D9%85%20%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C%20%D8%B4%D9%88%D8%AF%3A%20">واتساپ</a>
           <a href="https://instagram.com/agentyar_com" target="_blank" rel="noopener">اینستاگرام</a>
           <a href="mailto:Jafariyounes8@gmail.com">ایمیل</a>
         </nav>
@@ -260,7 +523,7 @@
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <a class="btn btn--primary" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%E2%80%8C%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85.%20%D9%86%D8%A7%D9%85%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D9%87%20%D9%88%20%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D8%B4%D8%B9%D8%A8%D9%87%E2%80%8C%D9%87%D8%A7%3A%20">مشاوره و خرید</a>
+  <a class="btn btn--primary" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%B4%D8%B1%D9%88%D8%B9%20%D9%87%D9%85%DA%A9%D8%A7%D8%B1%DB%8C%20%D8%A8%D8%A7%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85.%20%D9%86%D8%A7%D9%85%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%3A%20">شروع همکاری</a>
   <a class="btn btn--ghost" href="index.html">صفحه اصلی</a>
 </div>
 
@@ -280,10 +543,57 @@
       <a href="blog.html">بلاگ</a>
       <a href="index.html">برگشت به صفحه اصلی</a>
     </nav>
-    <a class="btn btn--primary btn--block" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%E2%80%8C%DB%8C%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85.%20%D9%86%D8%A7%D9%85%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D9%87%20%D9%88%20%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D8%B4%D8%B9%D8%A8%D9%87%E2%80%8C%D9%87%D8%A7%3A%20">مشاوره و خرید</a>
+    <a class="btn btn--primary btn--block" href="https://wa.me/989350886064?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%B4%D8%B1%D9%88%D8%B9%20%D9%87%D9%85%DA%A9%D8%A7%D8%B1%DB%8C%20%D8%A8%D8%A7%20%D8%A7%DB%8C%D8%AC%D9%86%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%DB%8C%D8%B2%D9%86%D8%B3%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85.%20%D9%86%D8%A7%D9%85%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%3A%20">شروع همکاری</a>
   </div>
 </div>
 
 <script src="main.js" defer></script>
+<script>
+(function(){
+  var cards=document.querySelectorAll('.svc');
+  if(!cards.length) return;
+  cards.forEach(function(c){
+    /* نور ملایم زیر نشانگر */
+    c.addEventListener('pointermove',function(e){
+      var r=c.getBoundingClientRect();
+      c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+      c.style.setProperty('--my',(e.clientY-r.top)+'px');
+    });
+    /* بعد از ظاهر شدن، تأخیر ورود روی hover اثر نگذارد */
+    c.addEventListener('transitionend',function(e){
+      if(e.target===c && e.propertyName==='opacity') c.style.transitionDelay='';
+    });
+    /* جزئیات */
+    var b=c.querySelector('.svc__btn');
+    if(b) b.addEventListener('click',function(){
+      var open=c.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  /* انیمیشن صحنه‌ها فقط وقتی کارت در دید است اجرا شود */
+  if('IntersectionObserver' in window){
+    document.documentElement.classList.add('svc-io');
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ en.target.classList.toggle('in-view',en.isIntersecting); });
+    },{threshold:.15});
+    cards.forEach(function(c){ io.observe(c); });
+  }
+})();
+
+(function(){
+  /* لینک «راهکار ما» روی هر مشکل: اسکرول به کارت مربوط و روشن شدن کوتاه آن */
+  document.querySelectorAll('.pain__fix').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.getElementById(a.getAttribute('data-sol'));
+      if(!t) return;
+      e.preventDefault();
+      var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      t.scrollIntoView({behavior:rm?'auto':'smooth',block:'center'});
+      t.classList.add('svc--hl');
+      setTimeout(function(){t.classList.remove('svc--hl');},1800);
+    });
+  });
+})();
+</script>
 </body>
 </html>
